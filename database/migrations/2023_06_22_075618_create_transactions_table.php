@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        SSchema::create('transactions', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('invoice');

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Office\DashboardController;
+use App\Http\Controllers\Office\PermissionController;
+use App\Http\Controllers\Office\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['prefix' => 'office', 'as' => 'office.', 'middleware' => ['auth']], function(){
+    Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    Route::resource('/permission', PermissionController::class);
+    Route::resource('/role', RoleController::class);
 });

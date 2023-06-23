@@ -1,5 +1,5 @@
-<a href="#" {{$attribut->merge(['class' => 'btn btn-info btn-sm']) }} data-toggle="modal"
-    data-target="modal-simple{{ $id }}">
+<a href="#" {{$attributes->merge(['class' => 'btn btn-info btn-sm'])}} data-toggle="modal"
+    data-target="#modal-simple{{ $id }}">
     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24"
         viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none" stroke-linecap="round"
         stroke-linejoin="round">
