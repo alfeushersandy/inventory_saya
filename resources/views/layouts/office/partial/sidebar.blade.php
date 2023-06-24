@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a href="/" class="navbar-brand navbar-brand-autodark">
-            <h3 class="font-weight-bold">SIDA</h3>
+            <h3 class="font-weight-bold">SIDA 2.0</h3>
         </a>
         <div class="navbar-nav flex-row d-lg-none">
             <div class="nav-item dropdown">
@@ -58,8 +58,8 @@
                 @role('admin')
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Master Data</div>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="#">
+                        <a class="nav-link {{Route::is('office.category*') ? 'active' : ''}}"
+                            href="{{route('office.category.index')}}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-category-2"
                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -77,8 +77,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="#">
+                        <a class="nav-link {{Route::is('office.supplier*') ? 'active' : ''}}"
+                            href="{{route('office.supplier.index')}}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-truck-delivery" width="24" height="24"
@@ -97,8 +97,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="#">
+                        <a class="nav-link {{Route::is('office.product*') ? 'active' : ''}}"
+                            href="{{route('office.product.index')}}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-database"
                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -118,8 +118,8 @@
                 @role('admin')
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Management Stok</div>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="#">
+                        <a class="nav-link {{Route::is('office.stock*') ? 'active' : ''}}"
+                            href="{{route('office.stock.index')}}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-database-import" width="24" height="24"
@@ -140,10 +140,11 @@
                         </a>
                     </li>
                 @endrole
+                @can('category-index')
                 <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Transaksi</div>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="#">
+                    <a class="nav-link {{Route::is('office.transaction*') ? 'active' : ''}}"
+                        href="{{route('office.transaction')}}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="icon icon-tabler icon-tabler-database-export" width="24" height="24"
@@ -164,8 +165,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="#">
+                    <a class="nav-link {{Route::is('office.order.index') ? 'active' : ''}}"
+                        href="{{route('office.order.index')}}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-database"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -183,6 +184,7 @@
                         </span>
                     </a>
                 </li>
+                @endcan
                 @role('admin')
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Management User</div>
                     <li class="nav-item">
@@ -205,7 +207,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" {{Route::is('office.role*') ? 'active' : ''}}
+                        <a class="nav-link {{Route::is('office.role*') ? 'active' : ''}}"
                             href="{{route('office.role.index')}}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-check"
@@ -223,8 +225,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="#">
+                        <a class="nav-link {{Route::is('office.user*') ? 'active' : ''}}"
+                            href="{{route('office.user.index')}}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle"
                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -242,8 +244,8 @@
                     </li>
                     <div class="hr-text hr-text-left ml-2 mb-2 mt-2">Laporan</div>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="#">
+                        <a class="nav-link {{Route::is('office.report*') ? 'active' : ''}}"
+                            href="{{route('office.report.index')}}">
                             <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report"
                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
